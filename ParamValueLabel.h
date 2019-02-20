@@ -3,9 +3,12 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-#include <string.h>
+#include <string>
+
+static const int pxTextEntryWidth = 60;
 
 static IText defaultParamText(18, &COLOR_WHITE, "Roboto", IText::kStyleNormal, IText::kAlignCenter, 0, IText::kQualityDefault);
+static IText defaultEditingText(18, &COLOR_BLACK, "Roboto", IText::kStyleNormal, IText::kAlignCenter, 0, IText::kQualityDefault);
 
 class ParamValueLabel : public ITextControl
 {
@@ -16,8 +19,15 @@ public:
 	void UpdateDisplay();
 	void SetText(char* text);
 
+	void OnMouseDblClick(int x, int y, IMouseMod* pMod) override;
+	void TextFromTextEntry(const char* text) override;
+
 private:
+	int mParamIdx;
 	IParam* mpParam;
+	IRECT mEntryRect;
+
+	IRECT TextEntryRect();
 };
 
 #endif // !__PARAMVALUELABEL__
