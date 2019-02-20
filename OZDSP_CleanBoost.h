@@ -3,6 +3,9 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
+#include <iostream>
+
+#include "CommonParameters.h"
 #include "ParamValueLabel.h"
 #include "VolumeControl.h"
 

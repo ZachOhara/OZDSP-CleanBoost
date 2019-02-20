@@ -32,9 +32,7 @@ OZDSP_CleanBoost::OZDSP_CleanBoost(IPlugInstanceInfo instanceInfo) :
 	TRACE;
 
 	//arguments are: name, defaultVal, minVal, maxVal, step, label
-	GetParam(kBoostPid)->InitDouble("Boost", 0.0, -100.0, 0, 0.1, " dB");
-	GetParam(kBoostPid)->SetShape(0.2);
-	GetParam(kBoostPid)->SetDisplayText(-100, "-oo dB");
+	InitGainParameter(GetParam(kBoostPid), "Boost");
 
 	IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
 	pGraphics->AttachBackground(BACKGROUND_RID, BACKGROUND_FN);
@@ -86,13 +84,14 @@ void OZDSP_CleanBoost::OnParamChange(int paramIdx)
 	switch (paramIdx)
 	{
 	case kBoostPid:
-		if (GetParam(kBoostPid)->Value() > GetParam(kBoostPid)->GetMin())
+		ZeroGainParam(GetParam(kBoostPid));
+		if (IsParamMinimized(GetParam(kBoostPid)))
 		{
-			mVolumeControl.SetDecibels(GetParam(kBoostPid)->Value());
+			mVolumeControl.SetZero();
 		}
 		else
 		{
-			mVolumeControl.SetZero();
+			mVolumeControl.SetDecibels(GetParam(kBoostPid)->Value());
 		}
 		mpBoostLabel->UpdateDisplay();
 		break;
