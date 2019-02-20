@@ -18,8 +18,8 @@ void InitGainParameter(IParam* pParam, char * name)
 
 void ZeroGainParam(IParam* pParam)
 {
-	const double threshold_db = -99.5;
-	if (pParam->Value() < threshold_db)
+	const double threshold_db = -99.95;
+	if (pParam->Value() <= threshold_db)
 	{
 		// First check if it's already at min, otherwise we'll get infinite recursion
 		if (pParam->Value() != pParam->GetMin())
