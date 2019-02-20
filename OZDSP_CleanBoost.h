@@ -15,9 +15,9 @@ public:
 	OZDSP_CleanBoost(IPlugInstanceInfo instanceInfo);
 	~OZDSP_CleanBoost();
 
-	void Reset();
-	void OnParamChange(int paramIdx);
-	void ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames);
+	void Reset() override;
+	void OnParamChange(int paramIdx) override;
+	void ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames) override;
 
 private:
 	VolumeControl mVolumeControl;
