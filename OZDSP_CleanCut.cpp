@@ -1,4 +1,4 @@
-#include "OZDSP_CleanBoost.h"
+#include "OZDSP_CleanCut.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControl.h"
 #include "resource.h"
@@ -26,7 +26,7 @@ enum ELayout
 	kBoostLabelHeight = 15
 };
 
-OZDSP_CleanBoost::OZDSP_CleanBoost(IPlugInstanceInfo instanceInfo) :
+OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
 	IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
 	TRACE;
@@ -50,14 +50,14 @@ OZDSP_CleanBoost::OZDSP_CleanBoost(IPlugInstanceInfo instanceInfo) :
 	CreatePresets();
 }
 
-OZDSP_CleanBoost::~OZDSP_CleanBoost() {}
+OZDSP_CleanCut::~OZDSP_CleanCut() {}
 
-void OZDSP_CleanBoost::CreatePresets()
+void OZDSP_CleanCut::CreatePresets()
 {
 	// TODO
 }
 
-void OZDSP_CleanBoost::ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames)
+void OZDSP_CleanCut::ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames)
 {
 	// Mutex is already locked for us.
 	const int nChannels = 2;
@@ -71,13 +71,13 @@ void OZDSP_CleanBoost::ProcessDoubleReplacing(double** inputs, double** outputs,
 	}
 }
 
-void OZDSP_CleanBoost::Reset()
+void OZDSP_CleanCut::Reset()
 {
 	TRACE;
 	IMutexLock lock(this);
 }
 
-void OZDSP_CleanBoost::OnParamChange(int paramIdx)
+void OZDSP_CleanCut::OnParamChange(int paramIdx)
 {
 	IMutexLock lock(this);
 

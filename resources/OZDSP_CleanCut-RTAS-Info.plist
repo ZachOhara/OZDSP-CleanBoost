@@ -5,26 +5,32 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OZDSP_CleanBoost v1.0.0 Copyright 2017 Acme Inc</string>
+	<string>OZDSP_CleanCut v1.0.0 Copyright 2017 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ZachOhara.vst2.OZDSP_CleanBoost</string>
+	<string>com.ZachOhara.rtas.OZDSP_CleanCut</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
+	<string>TDMw</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
-	<string>Ipef</string>
+	<string>PTul</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.7</string>
+	<key>LSMultipleInstancesProhibited</key>
+	<string>true</string>
+	<key>LSPrefersCarbon</key>
+	<true/>
+	<key>NSAppleScriptEnabled</key>
+	<string>No</string>
 </dict>
 </plist>

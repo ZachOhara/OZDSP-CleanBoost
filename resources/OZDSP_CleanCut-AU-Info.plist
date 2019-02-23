@@ -6,13 +6,13 @@
 	<array>
 		<dict>
 			<key>description</key>
-			<string>OZDSP_CleanBoost</string>
+			<string>OZDSP_CleanCut</string>
 			<key>factoryFunction</key>
-			<string>OZDSP_CleanBoost_Factory</string>
+			<string>OZDSP_CleanCut_Factory</string>
 			<key>manufacturer</key>
 			<string>Acme</string>
 			<key>name</key>
-			<string>ZachOhara: OZDSP_CleanBoost</string>
+			<string>ZachOhara: OZDSP_CleanCut</string>
 			<key>resourceUsage</key>
 			<dict>
 			</dict>
@@ -31,15 +31,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OZDSP_CleanBoost v1.0.0 Copyright 2017 Acme Inc</string>
+	<string>OZDSP_CleanCut v1.0.0 Copyright 2017 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ZachOhara.audiounit.OZDSP_CleanBoost</string>
+	<string>com.ZachOhara.audiounit.OZDSP_CleanCut</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -53,6 +53,6 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>10.7</string>
 	<key>NSPrincipalClass</key>
-	<string>OZDSP_CleanBoost_View</string>
+	<string>OZDSP_CleanCut_View</string>
 </dict>
 </plist>

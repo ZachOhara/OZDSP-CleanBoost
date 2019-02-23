@@ -1,20 +1,20 @@
 #define PLUG_MFR "ZachOhara"
-#define PLUG_NAME "OZDSP_CleanBoost"
+#define PLUG_NAME "OZDSP_CleanCut"
 
-#define PLUG_CLASS_NAME OZDSP_CleanBoost
+#define PLUG_CLASS_NAME OZDSP_CleanCut
 
 #define BUNDLE_MFR "ZachOhara"
-#define BUNDLE_NAME "OZDSP_CleanBoost"
+#define BUNDLE_NAME "OZDSP_CleanCut"
 
-#define PLUG_ENTRY OZDSP_CleanBoost_Entry
-#define PLUG_FACTORY OZDSP_CleanBoost_Factory
-#define PLUG_VIEW_ENTRY OZDSP_CleanBoost_ViewEntry
+#define PLUG_ENTRY OZDSP_CleanCut_Entry
+#define PLUG_FACTORY OZDSP_CleanCut_Factory
+#define PLUG_VIEW_ENTRY OZDSP_CleanCut_ViewEntry
 
-#define PLUG_ENTRY_STR "OZDSP_CleanBoost_Entry"
-#define PLUG_VIEW_ENTRY_STR "OZDSP_CleanBoost_ViewEntry"
+#define PLUG_ENTRY_STR "OZDSP_CleanCut_Entry"
+#define PLUG_VIEW_ENTRY_STR "OZDSP_CleanCut_ViewEntry"
 
-#define VIEW_CLASS OZDSP_CleanBoost_View
-#define VIEW_CLASS_STR "OZDSP_CleanBoost_View"
+#define VIEW_CLASS OZDSP_CleanCut_View
+#define VIEW_CLASS_STR "OZDSP_CleanCut_View"
 
 // Format        0xMAJR.MN.BG - in HEX! so version 10.1.5 would be 0x000A0105
 #define PLUG_VER 0x00010000
@@ -38,7 +38,7 @@
 
 // TODO
 #define PLUG_MFR_PT "ZachOhara\nZachOhara\nAcme"
-#define PLUG_NAME_PT "OZDSP_CleanBoost\nIPEF"
+#define PLUG_NAME_PT "OZDSP_CleanCut\nIPEF"
 #define PLUG_TYPE_PT "Effect"
 #define PLUG_DOES_AUDIOSUITE 1
 

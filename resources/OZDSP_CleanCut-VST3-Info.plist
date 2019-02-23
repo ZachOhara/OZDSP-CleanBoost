@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OZDSP_CleanBoost v1.0.0 Copyright 2017 Acme Inc</string>
+	<string>OZDSP_CleanCut v1.0.0 Copyright 2017 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ZachOhara.vst3.OZDSP_CleanBoost</string>
+	<string>com.ZachOhara.vst3.OZDSP_CleanCut</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>OZDSP_CleanBoost</string>
+	<string>OZDSP_CleanCut</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
