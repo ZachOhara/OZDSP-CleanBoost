@@ -5,9 +5,9 @@
 
 #include <iostream>
 
-#include "CommonParameters.h"
-#include "ParamValueLabel.h"
-#include "VolumeControl.h"
+#include "../OZDSP_Common/CommonParameters.h"
+#include "../OZDSP_Common/ParamValueLabel.h"
+#include "../OZDSP_Common/VolumeControl.h"
 
 class OZDSP_CleanCut : public IPlug
 {
