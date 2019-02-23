@@ -11,7 +11,7 @@ void InitGainParameter(IParam* pParam, char * name)
 	const double max_db = 0.0;
 	const double default_db = 0.0;
 
-	pParam->InitDouble("Boost", default_db, min_db, max_db, 0.1, " dB");
+	pParam->InitDouble("Boost", default_db, min_db, max_db, 0.1, "dB");
 	pParam->SetShape(0.2); // determined experimentally
 	pParam->SetDisplayText(-100, "-oo dB");
 }

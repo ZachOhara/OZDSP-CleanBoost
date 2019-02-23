@@ -17,6 +17,8 @@ void ParamValueLabel::UpdateDisplay()
 {
 	char* display[MAX_PARAM_DISPLAY_LEN];
 	mpParam->GetDisplayForHost((char*) display);
+	// add a space
+	strcat((char*) display, " ");
 	const char* label = mpParam->GetLabelForHost();
 	strcat((char*) display, label);
 	SetText((char*) display);
