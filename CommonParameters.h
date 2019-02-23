@@ -4,7 +4,7 @@
 
 bool IsParamMinimized(IParam* pParam);
 
-void InitGainParameter(IParam* pParam, char* name);
-void ZeroGainParam(IParam* pParam);
+void InitVolumeParameter(IParam* pParam);
+void ZeroVolumeParam(IParam* pParam);
 
 #endif // !__COMMONPARAMETERS__

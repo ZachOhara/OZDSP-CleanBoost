@@ -22,7 +22,7 @@ public:
 private:
 	VolumeControl mVolumeControl;
 
-	ParamValueLabel* mpBoostLabel;
+	ParamValueLabel* mpVolumeLabel;
 
 	void CreatePresets();
 };

@@ -7,7 +7,7 @@ const int kNumPrograms = 0;
 
 enum EParams
 {
-	kBoostPid,
+	kVolumePid,
 	kNumParams
 };
 
@@ -17,13 +17,13 @@ enum ELayout
 	kHeight = GUI_HEIGHT,
 	kKnobFrames = 128,
 
-	kBoostKnobX = 15,
-	kBoostKnobY = 40,
+	kVolumeKnobX = 15,
+	kVolumeKnobY = 40,
 
-	kBoostLabelX = 15,
-	kBoostLabelY = 160,
-	kBoostLabelWidth = 120,
-	kBoostLabelHeight = 15
+	kVolumeLabelX = 15,
+	kVolumeLabelY = 160,
+	kVolumeLabelWidth = 120,
+	kVolumeLabelHeight = 15
 };
 
 OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
@@ -32,18 +32,18 @@ OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
 	TRACE;
 
 	//arguments are: name, defaultVal, minVal, maxVal, step, label
-	InitGainParameter(GetParam(kBoostPid), "Boost");
+	InitVolumeParameter(GetParam(kVolumePid));
 
 	IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
 	pGraphics->AttachBackground(BACKGROUND_RID, BACKGROUND_FN);
 
 	IBitmap knob120 = pGraphics->LoadIBitmap(KNOB_120_RID, KNOB_120_FN, kKnobFrames);
 
-	pGraphics->AttachControl(new IKnobMultiControl(this, kBoostKnobX, kBoostKnobY, kBoostPid, &knob120));
+	pGraphics->AttachControl(new IKnobMultiControl(this, kVolumeKnobX, kVolumeKnobY, kVolumePid, &knob120));
 
-	IRECT tmpRect(kBoostLabelX, kBoostLabelY, kBoostLabelX + kBoostLabelWidth, kBoostLabelY + kBoostLabelHeight);
-	mpBoostLabel = new ParamValueLabel(this, kBoostPid, tmpRect);
-	pGraphics->AttachControl(mpBoostLabel);
+	IRECT tmpRect(kVolumeLabelX, kVolumeLabelY, kVolumeLabelX + kVolumeLabelWidth, kVolumeLabelY + kVolumeLabelHeight);
+	mpVolumeLabel = new ParamValueLabel(this, kVolumePid, tmpRect);
+	pGraphics->AttachControl(mpVolumeLabel);
 
 	AttachGraphics(pGraphics);
 
@@ -54,7 +54,7 @@ OZDSP_CleanCut::~OZDSP_CleanCut() {}
 
 void OZDSP_CleanCut::CreatePresets()
 {
-	// TODO
+	// No presets
 }
 
 void OZDSP_CleanCut::ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames)
@@ -83,17 +83,17 @@ void OZDSP_CleanCut::OnParamChange(int paramIdx)
 
 	switch (paramIdx)
 	{
-	case kBoostPid:
-		ZeroGainParam(GetParam(kBoostPid));
-		if (IsParamMinimized(GetParam(kBoostPid)))
+	case kVolumePid:
+		ZeroVolumeParam(GetParam(kVolumePid));
+		if (IsParamMinimized(GetParam(kVolumePid)))
 		{
 			mVolumeControl.SetZero();
 		}
 		else
 		{
-			mVolumeControl.SetDecibels(GetParam(kBoostPid)->Value());
+			mVolumeControl.SetDecibels(GetParam(kVolumePid)->Value());
 		}
-		mpBoostLabel->UpdateDisplay();
+		mpVolumeLabel->UpdateDisplay();
 		break;
 	default:
 		break;

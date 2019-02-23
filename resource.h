@@ -62,7 +62,7 @@ instrument determined by PLUG _IS _INST
 #define KNOB_120_RID 201
 
 // Image resource locations for this plug.
-#define BACKGROUND_FN "resources/img/CleanBoost.png"
+#define BACKGROUND_FN "resources/img/CleanCut.png"
 #define KNOB_120_FN "resources/img/knob_white120.png"
 
 // GUI default dimensions
