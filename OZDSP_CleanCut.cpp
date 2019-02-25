@@ -23,9 +23,8 @@ enum ELayout
 	kVolumeKnobY = 40,
 
 	kVolumeLabelX = 15,
-	kVolumeLabelY = 160,
-	kVolumeLabelWidth = 120,
-	kVolumeLabelHeight = 15
+	kVolumeLabelY = 150,
+	kVolumeLabelWidth = 120
 };
 
 OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
@@ -43,13 +42,13 @@ OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
 
 	pGraphics->AttachControl(new IKnobMultiControl(this, kVolumeKnobX, kVolumeKnobY, kVolumePid, &knob120));
 
-	IRECT tmpRect(kVolumeLabelX, kVolumeLabelY, kVolumeLabelX + kVolumeLabelWidth, kVolumeLabelY + kVolumeLabelHeight);
-	mpVolumeLabel = new ParamValueLabel(this, kVolumePid, tmpRect);
+	mpVolumeLabel = new ParamValueLabel(this, kVolumePid, kVolumeLabelX, kVolumeLabelY, kVolumeLabelWidth);
 	pGraphics->AttachControl(mpVolumeLabel);
 
 	AttachGraphics(pGraphics);
 
 	CreatePresets();
+	ForceUpdateParams(this);
 }
 
 OZDSP_CleanCut::~OZDSP_CleanCut() {}
@@ -86,15 +85,7 @@ void OZDSP_CleanCut::OnParamChange(int paramIdx)
 	switch (paramIdx)
 	{
 	case kVolumePid:
-		ZeroVolumeParam(GetParam(kVolumePid));
-		if (IsParamMinimized(GetParam(kVolumePid)))
-		{
-			mVolumeControl.SetZero();
-		}
-		else
-		{
-			mVolumeControl.SetDecibels(GetParam(kVolumePid)->Value());
-		}
+		HandleVolumeParamChange(GetParam(kVolumePid), &mVolumeControl);
 		mpVolumeLabel->UpdateDisplay();
 		break;
 	default:
