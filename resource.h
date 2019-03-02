@@ -58,12 +58,15 @@ instrument determined by PLUG _IS _INST
 #define PLUG_DOES_STATE_CHUNKS 0
 
 // Unique IDs for each image resource.
-#define BACKGROUND_RID 101
-#define KNOB_120_RID 201
+#define BACKGROUND_ID 101
+#define KNOB_120_ID 201
 
 // Image resource locations for this plug.
 #define BACKGROUND_FN "resources/img/CleanCut.png"
 #define KNOB_120_FN "resources/img/knob_white120.png"
+
+// Number of frames in the bitmaps
+#define KNOB_FRAMES 128
 
 // GUI default dimensions
 #define GUI_WIDTH 150

@@ -3,28 +3,22 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-#include <iostream>
+#include <vector>
 
-#include "../OZDSP_Common/CommonParameters.h"
-#include "../OZDSP_Common/ParamValueLabel.h"
-#include "../OZDSP_Common/VolumeControl.h"
+#include "../OZDSP_Common/CommonPlugBase.h"
+#include "../OZDSP_Common/parameter/ParameterInfo.h"
+#include "../OZDSP_Common/processing/VolumeProcessor.h"
 
-class OZDSP_CleanCut : public IPlug
+class OZDSP_CleanCut : public CommonPlugBase
 {
 public:
 	OZDSP_CleanCut(IPlugInstanceInfo instanceInfo);
 	~OZDSP_CleanCut();
 
-	void Reset() override;
-	void OnParamChange(int paramIdx) override;
 	void ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames) override;
 
 private:
-	VolumeControl mVolumeControl;
-
-	ParamValueLabel* mpVolumeLabel;
-
-	void CreatePresets();
+	VolumeProcessor mVolumeProcessor;
 };
 
 #endif
