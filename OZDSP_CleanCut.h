@@ -3,8 +3,6 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-#include <vector>
-
 #include "../OZDSP_Common/CommonPlugBase.h"
 #include "../OZDSP_Common/parameter/ParameterInfo.h"
 #include "../OZDSP_Common/processing/VolumeProcessor.h"

@@ -21,12 +21,14 @@ std::vector<ParameterInfo> kParameterList =
 OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
 	CommonPlugBase(instanceInfo, kNumParams, kNumPrograms,
 		MakeGraphics(this, GUI_WIDTH, GUI_HEIGHT),
-		COMMONPLUG_CTOR_PARAMS)
+		COMMONPLUG_CTOR_PARAMS),
+	mVolumeProcessor(this)
 {
 	SetBackground(BACKGROUND_ID, BACKGROUND_FN);
 	RegisterBitmap(KNOB_120_ID, KNOB_120_FN, KNOB_FRAMES);
 	AddParameters(kParameterList);
-	AddVolumeParamBridge(kVolumePid, &mVolumeProcessor);
+	RegisterProcessor(&mVolumeProcessor);
+	RegisterProcessorParameter(&mVolumeProcessor, kVolumePid, kVolumeProcessorDecibelsParam);
 	FinishConstruction();
 }
 
