@@ -57,20 +57,17 @@ instrument determined by PLUG _IS _INST
 
 #define PLUG_DOES_STATE_CHUNKS 0
 
-// Unique IDs for each image resource.
-#define BACKGROUND_ID 101
-#define KNOB_120_ID 201
-
-// Image resource locations for this plug.
-#define BACKGROUND_FN "resources/img/CleanCut.png"
-#define KNOB_120_FN "resources/img/knob_white120.png"
-
-// Number of frames in the bitmaps
-#define KNOB_FRAMES 128
-
-// GUI default dimensions
+// GUI dimensions
 #define GUI_WIDTH 150
-#define GUI_HEIGHT 250
+#define GUI_HEIGHT 220
+// Unique IDs for each image resource
+#define BACKGROUND_ID 101
+#define VOLUME_CONTROL_ID 201
+// Image resource locations for this plug
+#define BACKGROUND_FN "resources/img/CleanCut.png"
+#define VOLUME_CONTROL_FN "resources/img/volume.png"
+// Number of frames in the bitmaps
+#define VOLUME_CONTROL_FRAMES 128
 
 // on MSVC, you must define SA_API in the resource editor preprocessor macros as well as the c++ ones
 #if defined(SA_API)

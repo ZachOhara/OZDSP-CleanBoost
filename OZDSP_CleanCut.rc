@@ -1,7 +1,8 @@
 #include "resource.h"
 
-BACKGROUND_ID     PNG BACKGROUND_FN
-KNOB_120_ID       PNG KNOB_120_FN
+// Image resource definitions
+BACKGROUND_ID PNG BACKGROUND_FN
+VOLUME_CONTROL_ID PNG VOLUME_CONTROL_FN
 
 #ifdef SA_API
 //Standalone stuff

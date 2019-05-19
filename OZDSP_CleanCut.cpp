@@ -13,22 +13,25 @@ enum EParams
 std::vector<ParameterInfo> kParameterList =
 {
 	ParameterInfo()
-		.InitParam("Volume", kVolumePid, KNOB_120_ID, 15, 40)
+		.InitParam("Volume", kVolumePid, VOLUME_CONTROL_ID, 15, 40)
 		.InitLabel()
 		.MakeVolumeReductionParam(),
 };
 
 OZDSP_CleanCut::OZDSP_CleanCut(IPlugInstanceInfo instanceInfo) :
-	CommonPlugBase(instanceInfo, kNumParams, kNumPrograms,
+	CorePlugBase(instanceInfo, kNumParams, kNumPrograms,
 		MakeGraphics(this, GUI_WIDTH, GUI_HEIGHT),
-		COMMONPLUG_CTOR_PARAMS),
-	mVolumeProcessor(this)
+		COMMONPLUG_CTOR_PARAMS)
 {
 	SetBackground(BACKGROUND_ID, BACKGROUND_FN);
-	RegisterBitmap(KNOB_120_ID, KNOB_120_FN, KNOB_FRAMES);
-	AddParameters(kParameterList);
+
+	RegisterBitmap(VOLUME_CONTROL_ID, VOLUME_CONTROL_FN, VOLUME_CONTROL_FRAMES);
+
+	AddParameterList(kParameterList);
+
 	RegisterProcessor(&mVolumeProcessor);
-	RegisterProcessorParameter(&mVolumeProcessor, kVolumePid, kVolumeProcessorDecibelsParam);
+	mVolumeProcessor.RegisterParameter(kVolumePid, VolumeProcessor::kDecibelsParam);
+
 	FinishConstruction();
 }
 

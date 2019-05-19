@@ -3,11 +3,11 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-#include "../OZDSP_Common/CommonPlugBase.h"
-#include "../OZDSP_Common/parameter/ParameterInfo.h"
-#include "../OZDSP_Common/processing/VolumeProcessor.h"
+#include "../OZDSP_Core/CorePlugBase.h"
+#include "../OZDSP_Core/parameter/ParameterInfo.h"
+#include "../OZDSP_Core/audio/VolumeProcessor.h"
 
-class OZDSP_CleanCut : public CommonPlugBase
+class OZDSP_CleanCut : public CorePlugBase
 {
 public:
 	OZDSP_CleanCut(IPlugInstanceInfo instanceInfo);
